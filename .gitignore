@@ -1,0 +1,5 @@
+# Ignore ipch files
+*.ipch
+FABRIK.pdf
+Campos*
+example*
