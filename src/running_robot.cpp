@@ -107,6 +107,7 @@ bool starAnim = false;
 glm::vec3 initTest = glm::vec3(-0.2 - (0.35 / 4), 0, 0);
 glm::vec3 initRob = glm::vec3(0.25 / 2, 0.45 / 2 + 0.05, 0);
 glm::vec3 initRobD = glm::vec3(0.05, -0.05, 0);
+glm::vec3 destTest = glm::vec3(initTest.x + 0.35 + (0.35 / 2) - 0.3, initTest.y + 0.2, initTest.z + 0.2);
 // OpenGL initialization
 
 void createTestFirst() {
@@ -495,7 +496,8 @@ part* startAnimation(part* joint, glm::vec3 initP, glm::vec3 goalPos) {
 
 void drawTest(glm::mat4 model_view, glm::vec4 color) {
 
-	glm::vec3 dest = glm::vec3(initTest.x + 0.35 + (0.35 / 2) - 0.3, initTest.y + 0.2, initTest.z + 0.2); //move this coordinates wherever you want
+
+	glm::vec3 dest = destTest; //move this coordinates wherever you want
 	glm::mat4 mv = model_view;
 
 	mv = model_view * glm::translate(glm::mat4(), initTest) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
@@ -767,37 +769,61 @@ keyboard(unsigned char key, int x, int y)
 {
 	GLfloat moveBy = 5.;
 	switch (key) {
-	case 'a': case 'A':
-		Theta[Xaxis] += moveBy;
-		break;
-	case 'd': case 'D':
-		Theta[Xaxis] -= moveBy;
-		break;
-	case 'w': case 'W':
-		Theta[Yaxis] += moveBy;
-		break;
-	case 's': case 'S':
-		Theta[Yaxis] -= moveBy;
-		break;
-	case 't': case 'T':
-		test = !test;
-		if (test) {
-			std::cout << "Mode: test" << std::endl;
-			createTestFirst();
+		case '8':
+			destTest.y += 0.1;
 			starAnim = false;
-		}
-		else {
-			std::cout << "Mode: robot" << std::endl;
-			createRobot();
+			break;
+		case '2':
+			destTest.y -= 0.1;
 			starAnim = false;
-		}
+			break;
+		case '4':
+			destTest.x -= 0.1;
+			starAnim = false;
+			break;
+		case '6':
+			destTest.x += 0.1;
+			starAnim = false;
+			break;
+		case '7':
+			destTest.z += 0.1;
+			starAnim = false;
+			break;
+		case '3':
+			destTest.z -= 0.1;
+			starAnim = false;
+			break;
+		case 'a': case 'A':
+			Theta[Xaxis] += moveBy;
+			break;
+		case 'd': case 'D':
+			Theta[Xaxis] -= moveBy;
+			break;
+		case 'w': case 'W':
+			Theta[Yaxis] += moveBy;
+			break;
+		case 's': case 'S':
+			Theta[Yaxis] -= moveBy;
+			break;
+		case 't': case 'T':
+			test = !test;
+			if (test) {
+				std::cout << "Mode: test" << std::endl;
+				createTestFirst();
+				starAnim = false;
+			}
+			else {
+				std::cout << "Mode: robot" << std::endl;
+				createRobot();
+				starAnim = false;
+			}
 
-		break;
-	case 033: // Escape Key
-	case 'q': case 'Q':
-		exit(EXIT_SUCCESS);
-		break;
-	}
+			break;
+		case 033: // Escape Key
+		case 'q': case 'Q':
+			exit(EXIT_SUCCESS);
+			break;
+		}
 }
 
 //----------------------------------------------------------------------------
