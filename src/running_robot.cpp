@@ -770,27 +770,27 @@ keyboard(unsigned char key, int x, int y)
 	GLfloat moveBy = 5.;
 	switch (key) {
 		case '8':
-			destTest.y += 0.1;
+			destTest.y += 0.05;
 			starAnim = false;
 			break;
 		case '2':
-			destTest.y -= 0.1;
+			destTest.y -= 0.05;
 			starAnim = false;
 			break;
 		case '4':
-			destTest.x -= 0.1;
+			destTest.x -= 0.05;
 			starAnim = false;
 			break;
 		case '6':
-			destTest.x += 0.1;
+			destTest.x += 0.05;
 			starAnim = false;
 			break;
 		case '7':
-			destTest.z += 0.1;
+			destTest.z += 0.05;
 			starAnim = false;
 			break;
 		case '3':
-			destTest.z -= 0.1;
+			destTest.z -= 0.05;
 			starAnim = false;
 			break;
 		case 'a': case 'A':
