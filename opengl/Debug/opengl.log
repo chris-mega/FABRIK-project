@@ -51,7 +51,7 @@ c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cp
 c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(753): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(754): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(755): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(813): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(815): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(816): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(838): warning C4018: '<': signed/unsigned mismatch
+c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(840): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\documents\chrisum\comp 4490 graphics\project\src\running_robot.cpp(841): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
   opengl.vcxproj -> C:\Users\Chris\Documents\ChrisUM\COMP 4490 Graphics\project\\build\opengl.exe
