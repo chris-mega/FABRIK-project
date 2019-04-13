@@ -3,3 +3,5 @@
 FABRIK.pdf
 Campos*
 example*
+opengl/Debug/*
+.vs/*
