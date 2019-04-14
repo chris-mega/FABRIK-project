@@ -21,3 +21,5 @@ Using FABRIK technique to approach inverse kinematics problems
 
 ## Links:
 See [this project's paper](https://github.com/chris-mega/FABRIK-project/blob/master/MelendezChristianProject.pdf)
+
+See the presentation for this project [here](https://drive.google.com/file/d/1Ht_746--PpFF9UDkddua0K8axKofIgM5/view?usp=sharing)
