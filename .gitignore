@@ -1,5 +1,6 @@
 # Ignore ipch files
 *.ipch
+*.docx
 FABRIK.pdf
 actionscript.pdf
 Campos*

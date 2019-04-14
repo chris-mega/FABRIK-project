@@ -93,7 +93,7 @@ static std::vector<glm::vec4> ico_vertices;
 static std::vector<GLuint> ico_indices;
 
 part* testFirst = new part;
-bool test = true;
+bool test = false;
 
 part* leftArm = new part;
 part* rightArm = new part;
