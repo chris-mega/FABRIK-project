@@ -1,87 +1,87 @@
 ﻿  running_robot.cpp
 c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(36): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(116): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(117): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(124): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(125): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(132): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(133): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(139): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(140): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(154): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(155): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(162): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(163): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(170): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(171): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(177): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(178): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(192): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(193): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(200): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(201): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(208): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(209): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(215): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(216): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(230): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(231): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(238): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(239): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(246): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(247): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(253): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(254): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(267): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(268): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(275): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(276): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(283): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(284): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(290): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(291): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(362): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(642): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(660): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(661): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(662): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(744): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(745): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(746): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(119): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(120): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(127): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(128): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(135): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(136): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(142): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(143): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(157): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(158): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(165): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(166): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(173): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(174): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(180): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(181): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(195): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(196): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(203): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(204): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(211): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(212): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(218): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(219): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(233): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(234): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(241): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(242): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(249): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(250): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(256): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(257): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(270): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(271): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(278): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(279): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(286): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(287): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(293): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(294): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(365): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(650): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(668): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(669): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(670): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(753): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(754): warning C4305: 'argument': truncation from 'double' to 'float'
 c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(755): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(756): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(757): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(773): warning C4305: '+=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(768): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(769): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(770): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(805): warning C4305: '+=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(777): warning C4305: '-=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(809): warning C4305: '-=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(781): warning C4305: '-=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(813): warning C4305: '-=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(785): warning C4305: '+=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(817): warning C4305: '+=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(789): warning C4305: '+=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(821): warning C4305: '+=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(793): warning C4305: '-=': truncation from 'double' to 'T'
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(825): warning C4305: '-=': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(864): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(866): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(867): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(896): warning C4018: '<': signed/unsigned mismatch
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(898): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\documents\github\fabrik-project\src\running_robot.cpp(899): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
   opengl.vcxproj -> C:\Users\Chris\Documents\GitHub\FABRIK-project\\build\opengl.exe
