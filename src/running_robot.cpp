@@ -371,6 +371,21 @@ void iterateTree(part* init, glm::mat4 model_view, glm::vec4 color);
 part* copyJerar(part* root);
 
 
+part* legalRot(part* check, glm::vec3 dest) {
+	glm::vec3 pChck = check->object->pos;
+	float scalar = dot(dest, (check->object->pos - check->parent->object->pos)) / check->object->height;
+	glm::vec3 proj = scalar * normalize(check->object->pos - check->parent->object->pos);
+
+
+	float angle = acos(dot(pChck, proj) / (glm::length(pChck)*glm::length(proj)));
+	if (angle > M_PI / 4) {
+
+		std::cout << " " << std::endl;
+	}
+
+	return check;
+}
+
 void calculateIK(part* last, glm::vec3 goal) {
 	if (last != NULL) {
 		object* pobj = new object;
@@ -385,11 +400,14 @@ void calculateIK(part* last, glm::vec3 goal) {
 			//glm::vec3 newPos = normalize(last->object->pos - last->parent->object->pos) * last->parent->object->height;
 			glm::vec3 newPos = (1.f - lambda) * last->object->pos + lambda * last->parent->object->pos;
 			last->parent->object->pos = newPos;
+			legalRot(last, newPos);
 			calculateIK(last->parent, newPos);
 		}
 	}
 	
 }
+
+
 
 void calculateFK(part* init, glm::vec3 goal) {
 	if (init != NULL) {
@@ -612,6 +630,14 @@ void drawRobot(glm::mat4 model_view, glm::vec4 color) {
 	color = glm::vec4(0, 0, 0, 1);
 	drawSphere(color, mv);
 
+
+	glm::vec3 destRR = glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z); //move this coordinates wherever you want
+	mv = model_view * glm::translate(glm::mat4(), destRR) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
+	color = glm::vec4(0, 0, 0, 1);
+	drawSphere(color, mv);
+
+	
+
 	glm::vec3 destL = glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1); //move this coordinates wherever you want
 	mv = model_view * glm::translate(glm::mat4(), destL) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
 	color = glm::vec4(0, 0, 0, 1);
@@ -737,7 +763,8 @@ display(void)
 
 float lerp(float min, float max, float frac) {
 	//return (max - min) * frac + min;
-	return (1 - frac) * min + frac * max;
+	float asxdcv = (1 - frac) * min + frac * max;
+	return asxdcv;
 }
 
 bool forward = true;
@@ -775,9 +802,9 @@ update(void)
 					}
 					if (iterRL2->object->pos.x - iterRL1->object->pos.x < 0.01 && iterRL2->object->pos.y - iterRL1->object->pos.y < 0.01 && iterRL2->object->pos.z - iterRL1->object->pos.z < 0.01) {
 						if(step == 0)
-							retRLeg = startAnimation(retRLeg, retRLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRob.z));
+							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z));
 						else
-							retRLeg = startAnimation(retRLeg, retRLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
+							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
 						//rightLeg = copyJerar(retRLeg);
 						step++;
 					}
