@@ -629,13 +629,6 @@ void drawRobot(glm::mat4 model_view, glm::vec4 color) {
 	mv = model_view * glm::translate(glm::mat4(), destR) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
 	color = glm::vec4(0, 0, 0, 1);
 	drawSphere(color, mv);
-
-
-	glm::vec3 destRR = glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z); //move this coordinates wherever you want
-	mv = model_view * glm::translate(glm::mat4(), destRR) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
-	color = glm::vec4(0, 0, 0, 1);
-	drawSphere(color, mv);
-
 	
 
 	glm::vec3 destL = glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1); //move this coordinates wherever you want
@@ -645,7 +638,7 @@ void drawRobot(glm::mat4 model_view, glm::vec4 color) {
 
 	if (!starAnim) {
 		retRLeg = startAnimation(rightLeg, initRobD, destR);
-		retLLeg = startAnimation(rightLeg, initRobD, destL);
+		retLLeg = startAnimation(leftLeg, glm::vec3(-initRobD.x, initRobD.y, initRobD.z), destL);
 		starAnim = true;
 	}
 
@@ -792,25 +785,39 @@ update(void)
 			if (step < 2) {
 				if (!rightDone) {
 					for (int i = 0; i < 4;i++) {
-						iterRL1->object->pos.x = lerp(iterRL1->object->pos.x, iterRL2->object->pos.x, 0.01);
-						iterRL1->object->pos.y = lerp(iterRL1->object->pos.y, iterRL2->object->pos.y, 0.01);
-						iterRL1->object->pos.z = lerp(iterRL1->object->pos.z, iterRL2->object->pos.z, 0.01);
+						iterRL1->object->pos.x = lerp(iterRL1->object->pos.x, iterRL2->object->pos.x, 0.05);
+						iterRL1->object->pos.y = lerp(iterRL1->object->pos.y, iterRL2->object->pos.y, 0.05);
+						iterRL1->object->pos.z = lerp(iterRL1->object->pos.z, iterRL2->object->pos.z, 0.05);
 						if (i != 3) {
 							iterRL1 = iterRL1->child;
 							iterRL2 = iterRL2->child;
 						}
 					}
-					if (iterRL2->object->pos.x - iterRL1->object->pos.x < 0.01 && iterRL2->object->pos.y - iterRL1->object->pos.y < 0.01 && iterRL2->object->pos.z - iterRL1->object->pos.z < 0.01) {
+					if (glm::length(iterRL2->object->pos - iterRL1->object->pos) < error ) {
 						if(step == 0)
 							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z));
-						else
+						else 
 							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
-						//rightLeg = copyJerar(retRLeg);
 						step++;
 					}
 				}
 				else {
-					std::cout << " " << std::endl;
+					for (int i = 0; i < 4;i++) {
+						iterLL1->object->pos.x = lerp(iterLL1->object->pos.x, iterLL2->object->pos.x, 0.05);
+						iterLL1->object->pos.y = lerp(iterLL1->object->pos.y, iterLL2->object->pos.y, 0.05);
+						iterLL1->object->pos.z = lerp(iterLL1->object->pos.z, iterLL2->object->pos.z, 0.05);
+						if (i != 3) {
+							iterLL1 = iterLL1->child;
+							iterLL2 = iterLL2->child;
+						}
+					}
+					if (glm::length(iterLL2->object->pos - iterLL1->object->pos) < error) {
+						if (step == 0)
+							retLLeg = startAnimation(leftLeg, leftLeg->object->pos, glm::vec3(-initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z));
+						else
+							retLLeg = startAnimation(leftLeg, leftLeg->object->pos, glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
+						step++;
+					}
 				}
 			}
 			else {
