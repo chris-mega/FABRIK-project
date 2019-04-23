@@ -102,6 +102,9 @@ part* rightLeg = new part;
 part* retTest;
 part* retRLeg;
 part* retLLeg;
+part* retRArm;
+part* retLArm;
+float floorAn = 0;
 bool starAnim = false;
 bool rightDone = false;
 bool rightStart = true;
@@ -380,7 +383,6 @@ part* legalRot(part* check, glm::vec3 dest) {
 	float angle = acos(dot(pChck, proj) / (glm::length(pChck)*glm::length(proj)));
 	if (angle > M_PI / 4) {
 
-		std::cout << " " << std::endl;
 	}
 
 	return check;
@@ -625,20 +627,32 @@ void drawRobot(glm::mat4 model_view, glm::vec4 color) {
 	cubeOutline();
 	///////////////////////////////////////////
 
-	glm::vec3 destR = glm::vec3(initRobD.x, initRobD.y - 0.35/2 - 0.35/4, initRobD.z+0.1); //move this coordinates wherever you want
+	glm::vec3 destR = glm::vec3(initRobD.x, initRobD.y - 0.35/2 - 0.35/4, initRobD.z+0.1); 
 	mv = model_view * glm::translate(glm::mat4(), destR) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
 	color = glm::vec4(0, 0, 0, 1);
 	drawSphere(color, mv);
 	
 
-	glm::vec3 destL = glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1); //move this coordinates wherever you want
+	glm::vec3 destL = glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1); 
 	mv = model_view * glm::translate(glm::mat4(), destL) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
+	color = glm::vec4(0, 0, 0, 1);
+	drawSphere(color, mv);
+
+	glm::vec3 destAL = glm::vec3(- initRob.x - 0.025, initRob.y - 0.025 - 0.35, initRob.z + 0.1); 
+	mv = model_view * glm::translate(glm::mat4(), destAL) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
+	color = glm::vec4(0, 0, 0, 1);
+	drawSphere(color, mv);
+
+	glm::vec3 destAR = glm::vec3(initRob.x + 0.025 + 0.1, initRob.y - 0.025 - 0.35, initRob.z + 0.05);
+	mv = model_view * glm::translate(glm::mat4(), destAR) * glm::scale(glm::mat4(), glm::vec3(error, error, error));
 	color = glm::vec4(0, 0, 0, 1);
 	drawSphere(color, mv);
 
 	if (!starAnim) {
 		retRLeg = startAnimation(rightLeg, initRobD, destR);
 		retLLeg = startAnimation(leftLeg, glm::vec3(-initRobD.x, initRobD.y, initRobD.z), destL);
+		retRArm = startAnimation(rightArm, glm::vec3(initRob.x + 0.025, initRob.y, initRob.z), destAR);
+		retLArm = startAnimation(leftArm, glm::vec3(-initRob.x - 0.025, initRob.y, initRob.z), destAL);
 		starAnim = true;
 	}
 
@@ -737,7 +751,7 @@ display(void)
 	bool black = true;
 	for (float z = -0.5; z <= 0.5; z += 0.25) {
 		for (float x = -0.5; x <= 0.5; x += 0.25) {
-			model_view = trans * glm::translate(glm::mat4(), glm::vec3(x, -0.55, z)) * glm::scale(glm::mat4(), glm::vec3(0.2,0.2,0.2));
+			model_view = trans * glm::translate(glm::mat4(), glm::vec3(x, -0.55f, z + floorAn)) * glm::scale(glm::mat4(), glm::vec3(0.2,0.2,0.2));
 			glUniformMatrix4fv(ModelView, 1, GL_FALSE, glm::value_ptr(model_view));
 			if (black)
 				color = glm::vec4(0, 0, 0, 1);
@@ -778,26 +792,41 @@ update(void)
 			}
 		}
 		else {
+			floorAn -= 0.0005;
 			part* iterRL1 = rightLeg;
 			part* iterRL2 = retRLeg;
 			part* iterLL1 = leftLeg;
 			part* iterLL2 = retLLeg;
+			part* iterLA1 = leftArm;
+			part* iterLA2 = retLArm;
+			part* iterRA1 = rightArm;
+			part* iterRA2 = retRArm;
 			if (step < 2) {
 				if (!rightDone) {
 					for (int i = 0; i < 4;i++) {
 						iterRL1->object->pos.x = lerp(iterRL1->object->pos.x, iterRL2->object->pos.x, 0.05);
 						iterRL1->object->pos.y = lerp(iterRL1->object->pos.y, iterRL2->object->pos.y, 0.05);
 						iterRL1->object->pos.z = lerp(iterRL1->object->pos.z, iterRL2->object->pos.z, 0.05);
+
+						iterLA1->object->pos.x = lerp(iterLA1->object->pos.x, iterLA2->object->pos.x, 0.05);
+						iterLA1->object->pos.y = lerp(iterLA1->object->pos.y, iterLA2->object->pos.y, 0.05);
+						iterLA1->object->pos.z = lerp(iterLA1->object->pos.z, iterLA2->object->pos.z, 0.05);
 						if (i != 3) {
 							iterRL1 = iterRL1->child;
 							iterRL2 = iterRL2->child;
+							iterLA1 = iterLA1->child;
+							iterLA2 = iterLA2->child;
 						}
 					}
 					if (glm::length(iterRL2->object->pos - iterRL1->object->pos) < error ) {
-						if(step == 0)
+						if (step == 0) {
 							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z));
-						else 
+							retLArm = startAnimation(leftArm, leftArm->object->pos, glm::vec3(-initRob.x - 0.025, initRob.y - 0.025 - 0.35 - 0.05, initRob.z));
+						}
+						else {
 							retRLeg = startAnimation(rightLeg, rightLeg->object->pos, glm::vec3(initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
+							retLArm = startAnimation(leftArm, leftArm->object->pos, glm::vec3(-initRob.x - 0.025, initRob.y - 0.025 - 0.35, initRob.z + 0.1));
+						}
 						step++;
 					}
 				}
@@ -806,16 +835,26 @@ update(void)
 						iterLL1->object->pos.x = lerp(iterLL1->object->pos.x, iterLL2->object->pos.x, 0.05);
 						iterLL1->object->pos.y = lerp(iterLL1->object->pos.y, iterLL2->object->pos.y, 0.05);
 						iterLL1->object->pos.z = lerp(iterLL1->object->pos.z, iterLL2->object->pos.z, 0.05);
+
+						//iterRA1->object->pos.x = lerp(iterRA1->object->pos.x, iterRA2->object->pos.x, 0.05);
+						//iterRA1->object->pos.y = lerp(iterRA1->object->pos.y, iterRA2->object->pos.y, 0.05);
+						//iterRA1->object->pos.z = lerp(iterRA1->object->pos.z, iterRA2->object->pos.z, 0.05);
 						if (i != 3) {
 							iterLL1 = iterLL1->child;
 							iterLL2 = iterLL2->child;
+							//iterRA1 = iterRA1->child;
+							//iterRA2 = iterRA2->child;
 						}
 					}
 					if (glm::length(iterLL2->object->pos - iterLL1->object->pos) < error) {
-						if (step == 0)
+						if (step == 0) {
 							retLLeg = startAnimation(leftLeg, leftLeg->object->pos, glm::vec3(-initRobD.x, initRobD.y - 0.35 - 0.05, initRobD.z));
-						else
+							//retRArm = startAnimation(rightArm, rightArm->object->pos, glm::vec3(initRob.x + 0.025, initRob.y - 0.025 - 0.35 - 0.05, initRob.z));
+						}
+						else {
 							retLLeg = startAnimation(leftLeg, leftLeg->object->pos, glm::vec3(-initRobD.x, initRobD.y - 0.35 / 2 - 0.35 / 4, initRobD.z + 0.1));
+							//retRArm = startAnimation(rightArm, rightArm->object->pos, glm::vec3(initRob.x + 0.025 + 0.1, initRob.y - 0.025 - 0.35, initRob.z + 0.05));
+						}
 						step++;
 					}
 				}
@@ -873,6 +912,7 @@ keyboard(unsigned char key, int x, int y)
 			break;
 		case 't': case 'T':
 			test = !test;
+			floorAn = 0;
 			if (test) {
 				std::cout << "Mode: test" << std::endl;
 				createTestFirst();
